@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="..\js\vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        MVVM模型
+        1.M模型 data中的数据
+        2.V视图 模板代码
+        3.VM 试图模型 vue实例
+    观察发现
+        1.data种所有属性 最后都出现在vm上
+        2.vm上所有属性，vue原型所有属性，在vue模板中都能直接使用
+     -->
+  <div id="app">
+    {{msg}}
+  </div>
+</body>
+
+</html>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'ok',
+      
+    }
+  });
+</script>

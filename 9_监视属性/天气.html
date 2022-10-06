@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天气如何</title>
+  
+  <script src="..\js\vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>天气很{{isHot? '热' : '冷'}}</h1>
+    <button @click="isHot = !isHot">改变天气</button>
+</div>
+</body>
+
+</html>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'ok',
+      isHot:false
+      
+    },
+    watch:{
+        isHot:{
+            immediate:true,  //上来直接执行一次
+            //handler什么时候调用？当isHot发生改变时
+            handler(newValue,oldvalue){
+                console.log('改变了')
+                console.log(newValue,oldvalue )
+            }
+        }
+    }
+
+  });
+</script>
