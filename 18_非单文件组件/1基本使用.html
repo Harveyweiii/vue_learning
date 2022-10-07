@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="..\js\vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <school></school>
+
+    <hr>
+    <student></student>
+
+  </div>
+</body>
+
+</html>
+<script>
+
+    const school = Vue.extend({
+        template:`
+        <div>
+            <h1>名字:{{name}}</h1>
+            <h1>地址:{{address}}</h1>
+        </div>
+        `,
+        data(){
+            return{
+                name:'北京大学',
+                address:"北京"
+            }
+        }
+    })
+
+    const student = Vue.extend({
+        template:`
+        <div>    
+            <h1>名字:{{name}}</h1>
+            <h1>年龄:{{age}}</h1>
+        </div>
+        `,
+        data(){
+            return{
+                name:"abc",
+                age:18
+            }
+        }
+    })
+
+
+  new Vue({
+    el: '#app',
+    components:{
+        school:school,
+        student:student
+    }
+  });
+</script>

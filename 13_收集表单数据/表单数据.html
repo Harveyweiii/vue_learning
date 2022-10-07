@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="..\js\vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <form @submit.prevent="demo">
+    账号<input type="text" v-model.trim="account"><br><br>
+    密码<input type="password" v-model="password"><br><br>
+    年龄<input type="number" v-model.number="age"><br><br>
+    性别:
+    男<input type="radio" name="sex" value="male" v-model="sex">
+    女<input type="radio" name="sex" value="female" v-model="sex"><br><br>
+    爱好
+    打篮球<input type="checkbox" v-model="hobby" value="ball">
+    打游戏<input type="checkbox" v-model="hobby" value="game">
+    踢足球<input type="checkbox"  v-model="hobby" value="footballvalue"><br><br>
+    所属校区
+    <select name="xiqou" v-model="city" id="">
+        <option value="">请选择校区</option>
+        <option value="shanghai">上海</option>
+        <option value="beijing">北京</option>
+        <option value="guangzhou">广州</option>
+        <option value="wuhan">武汉 </option>
+    </select><br><br>
+    其他信息<br><br>
+    <textarea  v-model.lazy="others" id="" cols="30" rows="10"></textarea><br><br>
+    <input  type="checkbox">阅读并接受<a href="https://www.baidu.com">用户协议</a><br><br>
+    <button>提交</button>
+</form>
+</div>
+</body>
+
+</html>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      account:'',
+      password:'',
+      sex:'',
+      hobby:[],
+      others:'',
+      city:'',
+      age:18
+    },
+    methods:{
+        demo(){
+            alert(1)
+        }
+    }
+  });
+</script>
